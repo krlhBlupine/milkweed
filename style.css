@@ -54,11 +54,14 @@ footer{
 
 header{
     border-bottom: 1px var(--borders) solid;
+    padding: 0px;
 
     
 }
-    header h1{
+    header h3{
         text-size-adjust: smaller;
+        margin: 0px;
+        margin-left: 5px;
     }
 
 main{
@@ -124,7 +127,7 @@ main{
     position: absolute;
     width: 500px;
     max-width: 500px;               /*  Styles for the sliding menus. */
-    height: 122px;                  /*  Imported from codepen at https://codepen.io/mignunez/pen/rNwVygZ */                   /*  and thouroughly vivisected. */
+    height: 123px;                  /*  Imported from codepen at https://codepen.io/mignunez/pen/rNwVygZ */                   /*  and thouroughly vivisected. */
     background: var(--sidebars);
     transform: translateX(-500px) translateY(-2px);
     -webkit-transform: translateX(-500px) translateY(-2px);
