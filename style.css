@@ -1,8 +1,12 @@
 /* Utility. Variables and misc rules go here. */
 
 :root{
-    --header-image: url('https://github.com/krlhBlupine/krlhBlupine/blob/main/assets/backgroundA.png');
-
+    --header-image: url('assets/backgroundA.png');
+    --background: #1D612D;
+    --bodytext: #B3F7D0;
+    --borders: #31D236;
+    --sidebars: #0E6646;
+    --bartext: #07D2AE;
 }
 
 body {
@@ -12,8 +16,8 @@ body {
     background: black
 }
 
-header, main, footer, .nav_arrows{
-    border:1px black solid
+header, main, footer, .nav_arrows, .popbar{
+    border: 2px var(--borders) solid
 }
 
 .flex{
@@ -29,14 +33,17 @@ header, main, footer, .nav_arrows{
 .container{
     max-width: 900px;
     flex-shrink: 0px;
-    background-image: var(--header-image) repeat-y 60% 50%;
-    background-color: #ffffff;
+    background-color: var(--background);
 }
+    .container text,p{
+        color: var(--bodytext);
+    }
 
 footer{
     margin-top: 20px;
     height: 30px;
     margin-bottom: 0px;
+    color: var(--bodytext);
 }
 
 /* Left part of the main display. Contains the iframe and the website title. */
@@ -48,13 +55,16 @@ footer{
 }
 
 header{
-    height: 30px;
+    border-bottom: 1px var(--borders) solid;
+    height: 25px;
+    padding-top: 10px;
 }
 
 main{
+    border-top: 0px;
     width: 100%-1px;
     max-height: 95%;
-    height: 626px;
+    height: 599px;
     padding: 5px;
 }
 
@@ -62,6 +72,11 @@ main{
         margin-top: 5px;
         margin-bottom: 3px;
     }
+.nav_arrows{
+    border-top: 0px;
+    color: var(--bodytext);
+    text-align: center;
+}
 
 /* Right part of the display. Contains a space for a decoration image as well as the sliding side menus. */ 
 
@@ -72,6 +87,7 @@ main{
 .decoration{             /* <-- Space for a  background image or such. */ 
     width: 100%;
     height: 100%;
+    background-image: var(--header-image) repeat-y 60% 50%;
 }
 
 .bar_row{                /* <-- Flexbox holding the row of menus. */
@@ -80,73 +96,70 @@ main{
 }
 
 .popbar{                 /* <-- Class for the bits you hover over. */
-    display: flex;
-    flex-basis: 33%;
-    height: 120px;
-    width: 20px;
-    margin-top: 20px;
+    margin-top: 25px;
     flex-direction: column;
-    background-color: #aee2a9;
+    background-color: var(--sidebars);
   }
   
     .popbar p{
+        vertical-align: middle;
         text-align:center;
         min-height: 20px;
         margin-top: 50px;
         margin-bottom: 50px;
     }
 
-  #slider_a, #slider_b, #slider_c, #slider_d {
+.popout{
+    display:flex;
+    text-align:center;
+    height: 100%;
+    border-top: 2px var(--borders) solid;
+    border-bottom: 2px var(--borders) solid;
+    border-left: 2px var(--borders) solid;
+}
+
+#slider_a, #slider_b, #slider_c, #slider_d {
     position: absolute;
     width: 500px;
     max-width: 500px;               /*  Styles for the sliding menus. */
-    height: 120px;                  /*  Imported from codepen at https://codepen.io/mignunez/pen/rNwVygZ */
-    z-index: 1;                     /*  and thouroughly vivisected. */
-    background: #aee2a9;
-    transform: translateX(-500px);
-    -webkit-transform: translateX(-500px);
-  }
+    height: 121px;                  /*  Imported from codepen at https://codepen.io/mignunez/pen/rNwVygZ */                   /*  and thouroughly vivisected. */
+    background: var(--sidebars);
+    transform: translateX(-500px) translateY(-3px);
+    -webkit-transform: translateX(-500px) translateY(-3px);
+}
   
-   .slide-in {
+.slide-in {
       animation: slide-in 0.5s forwards;
       -webkit-animation: slide-in 0.5s forwards;
-  } 
+} 
   
+.popbox{
+    flex:100%;
+    flex-direction: column;
+    padding: 10px;
+    color: var(--bartext);
+}
       
-  @keyframes slide-in {
-      100% { transform: translateX(500px); }
-  }
+@keyframes slide-in {
+      100% { transform: translateX(500px) translateY(-3px); }
+}
   
-  @-webkit-keyframes slide-in {
-      100% { -webkit-transform: translateX(500px); }
-  }
+@-webkit-keyframes slide-in {
+      100% { -webkit-transform: translateX(500px) translateY(-3px); }
+}
   
   .slide-out {
       animation: slide-out 0.5s forwards;
       -webkit-animation: slide-out 0.5s forwards;
-  }
+}
       
-  @keyframes slide-out {
-      0% { transform: translateX(0px); }
-      100% { transform: translateX(-500px); }
-  }
+@keyframes slide-out {
+      0% { transform: translateX(0px) translateY(-3px); }
+      100% { transform: translateX(-500px) translateY(-3px); }
+}
   
-  @-webkit-keyframes slide-out {
-      0% { -webkit-transform: translateX(0px); }
-      100% { -webkit-transform: translateX(-500px); }
-  }
-
-
+@-webkit-keyframes slide-out {
+      0% { -webkit-transform: translateX(0px) translateY(-3px); }
+      100% { -webkit-transform: translateX(-500px) translateY(-3px); }
+}
 /* ---END SLIDER RULES--- */
-
-.popout{
-    display:flex;
-    text-align:center;
-}
-
-.popbox{
-    flex:100%;
-    padding: 10px;
-    border: 1px black;
-    z-index: 1;
-}
