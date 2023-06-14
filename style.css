@@ -30,14 +30,11 @@ header, main, footer, .nav_arrows, .popbar{
     z-index: 2;
 }
 
-.allcontainer{
-    height: 1200px;
-}
-
 .container{
     max-width: 900px;
     flex-shrink: 0px;
     background-color: var(--background);
+    height 90%;
 }
     .container text,p{
         color: var(--bodytext);
@@ -62,6 +59,9 @@ header{
     border-bottom: 1px var(--borders) solid;
     height: 25px;
 }
+    header h1{
+        text-size-adjust: smaller;
+    }
 
 main{
     border-top: 0px;
@@ -95,6 +95,7 @@ main{
 .bar_row{                /* <-- Flexbox holding the row of menus. */
     height: 100%;
     width: 30px;
+    margin-bottom: 20%;
 }
 
 .popbar{                 /* <-- Class for the bits you hover over. */
@@ -125,7 +126,7 @@ main{
     position: absolute;
     width: 500px;
     max-width: 500px;               /*  Styles for the sliding menus. */
-    height: 121px;                  /*  Imported from codepen at https://codepen.io/mignunez/pen/rNwVygZ */                   /*  and thouroughly vivisected. */
+    height: 14%;                  /*  Imported from codepen at https://codepen.io/mignunez/pen/rNwVygZ */                   /*  and thouroughly vivisected. */
     background: var(--sidebars);
     transform: translateX(-500px) translateY(-3px);
     -webkit-transform: translateX(-500px) translateY(-3px);
