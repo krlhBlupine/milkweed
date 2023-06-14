@@ -57,7 +57,7 @@ footer{
 
 header{
     border-bottom: 1px var(--borders) solid;
-    height: 25px;
+    
 }
     header h1{
         text-size-adjust: smaller;
